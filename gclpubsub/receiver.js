@@ -9,8 +9,7 @@ const pubSubClient = new PubSub({
 function listenForMessages(subscriptionName, timeout) {
   // References an existing subscription
   const subscription = pubSubClient.subscription(subscriptionName);
-  subscription.pull()
-
+  
   // Create an event handler to handle messages
   let messageCount = 0;
   const messageHandler = message => {
@@ -31,4 +30,4 @@ function listenForMessages(subscriptionName, timeout) {
     console.log(`${messageCount} message(s) received.`);
   }, timeout * 1000);
 }
-listenForMessages('VuVuongVi', 5)
+listenForMessages('VuVuongVi', 60)
